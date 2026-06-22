@@ -1,0 +1,397 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#07111f;
+    color:white;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+/* ========================= */
+/* FONDO */
+/* ========================= */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+
+    radial-gradient(circle at 20% 20%,rgba(255,255,255,.18) 2px,transparent 2px),
+
+    radial-gradient(circle at 80% 35%,rgba(255,255,255,.15) 2px,transparent 2px),
+
+    radial-gradient(circle at 35% 80%,rgba(255,255,255,.18) 2px,transparent 2px),
+
+    linear-gradient(180deg,#07111f,#18244b,#401848);
+
+    background-size:
+
+    180px 180px,
+
+    220px 220px,
+
+    260px 260px,
+
+    100% 100%;
+
+    animation:fondo 20s linear infinite;
+
+}
+
+@keyframes fondo{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-80px);
+
+    }
+
+}
+
+/* ========================= */
+/* PANTALLAS */
+/* ========================= */
+
+.pantalla{
+
+    width:100%;
+    min-height:100vh;
+
+    position:absolute;
+    inset:0;
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    overflow-y:auto;
+
+    text-align:center;
+
+}
+
+.pantalla.activa{
+
+    display:flex;
+
+}
+
+/* ========================= */
+/* INICIO */
+/* ========================= */
+
+.pinguino{
+
+    font-size:120px;
+
+    animation:flotar 2.5s ease-in-out infinite;
+
+}
+
+@keyframes flotar{
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+h1{
+
+    font-size:42px;
+
+    margin-top:20px;
+
+}
+
+.subtexto{
+
+    margin-top:15px;
+
+    opacity:.8;
+
+}
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
+
+button{
+
+    margin-top:20px;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:#ff4fa4;
+
+    color:white;
+
+    padding:16px 28px;
+
+    border-radius:30px;
+
+    font-size:17px;
+
+    transition:.3s;
+
+    box-shadow:0 0 20px rgba(255,79,164,.35);
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ========================= */
+/* SOBRE */
+/* ========================= */
+
+.sobreContainer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.sobre{
+
+    width:300px;
+
+    height:190px;
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.cuerpo{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#ff7aa7;
+
+    border-radius:10px;
+
+}
+
+.tapa{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#ff5f93;
+
+    clip-path:polygon(0 0,50% 55%,100% 0);
+
+    transition:1s;
+
+    transform-origin:top;
+
+}
+
+/* ========================= */
+/* CARTA */
+/* ========================= */
+
+.cartaBox{
+
+    width:min(900px,95%);
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 0 30px rgba(0,0,0,.25);
+
+}
+
+.cartaBox h2{
+
+    margin-bottom:25px;
+
+}
+
+#textoCarta{
+
+    white-space:pre-line;
+
+    line-height:1.9;
+
+    text-align:left;
+
+}
+
+.botonesCarta{
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+
+/* ========================= */
+/* GALERÍA */
+/* ========================= */
+
+.sliderContainer{
+
+    width:min(900px,95%);
+
+    margin-top:30px;
+
+}
+
+.sliderContainer img{
+
+    width:100%;
+
+    max-height:65vh;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:0 0 35px rgba(255,255,255,.15);
+
+    transition:.5s;
+
+}
+
+.controles{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+.accionesGaleria{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    margin-top:30px;
+
+}
+
+/* ========================= */
+/* FINAL */
+/* ========================= */
+
+.finalBox{
+
+    max-width:900px;
+
+}
+
+.rosa{
+
+    font-size:90px;
+
+    animation:flotar 2s infinite;
+
+}
+
+.fraseFinal{
+
+    margin-top:20px;
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:45px;
+
+    color:#ffd5e8;
+
+}
+
+/* ========================= */
+/* MÓVIL */
+/* ========================= */
+
+@media(max-width:768px){
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    .pinguino{
+
+        font-size:90px;
+
+    }
+
+    .cartaBox{
+
+        padding:25px;
+
+    }
+
+    .fraseFinal{
+
+        font-size:35px;
+
+    }
+
+}
